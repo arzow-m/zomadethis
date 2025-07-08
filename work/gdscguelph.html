@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>gdsc - arzow</title>
+  <!-- linking stylesheet-->
+  <link rel="stylesheet" href="../work_style.css" />
+</head>
+
+<body> 
+  <header>
+    <div class="logo">arzow maksum</div>
+    <nav>
+      <a href="../index.html#home">home</a>
+      <a href="../index.html#work">work</a>
+      <a href="../index.html#skills">skills</a>
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#contact">contact</a>
+    </nav>
+  </header>
+
+  <main class="project-section">
+  <h1 class="project-title">Google Developer Student Club</h1>
+  <h2 class="project-subtitle">Marketing Director</h2>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="../images/gdsc1.JPG" alt="Slide 1" class="carousel-slide active">
+      <img src="../images/gdsc2.jpg" alt="Slide 2" class="carousel-slide">
+      <img src="../images/gdsc3.jpg" alt="Slide 3" class="carousel-slide">
+      <img src="../images/gdsc4.jpg" alt="Slide 4" class="carousel-slide">
+      <img src="../images/gdsc5.jpg" alt="Slide 5" class="carousel-slide">
+      <img src="../images/gdsc6.png" alt="Slide 6" class="carousel-slide">
+
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <div class="project-description">
+  <p>
+    My term as Marketing Director at <a href="https://www.gdscguelph.com">GDSC Guelph</a> was an incredibly rewarding experience. 
+    I managed a marketing team of 4 Digital Designers and chaired weekly meetings where I assigned action items, coordinated campaign 
+    timelines, and kept communication flowing between our design, tech, and events teams. 
+  </p>
+  <p>
+    I created marketing campaigns tailored to our student audience, resulting in an average turnout of 80–120 students per event, often 
+    exceeding expectations. This was done through a combination of lecture hall visits to pitch the event a large volume of students (as shown in slide 1 of the carousel),
+    all the way to emailing the undergrad computing chain. 
+    I marketed workshops on tools like React, Flutter, and Firebase, which helped bridge the gap between the 
+    curriculum and real-world technical skills. I also analyzed our marketing metrics to track campaign performance and used those insights 
+    to make data-driven decisions that improved reach and engagement.
+  </p>
+
+  <p>
+    Beyond strategy, I was also super hands-on: I directed post designs to match the visual identity of our feed, gathered event content, 
+    snapped photos at sessions, and even made silly short-form reels to keep things fun and relatable. Feel free to check them out on our Instagram (<a href="https://www.instagram.com/gdsc_guelph/">@GDSC_Guelph</a>)! 
+    At our peak, we hit over 40K Instagram
+     profile views, and the follower count doubled by the end of my term.
+  </p>
+
+  <p>
+    Best of all, I became close friends with my team :) we collaborated effectively but also laughed a ton. It was one of the most fulfilling
+     and memorable leadership roles I’ve taken on.
+  </p>
+</div>
+
+</main>
+
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+</script>
+
+</body>
+</html>

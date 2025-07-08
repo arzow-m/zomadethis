@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>stem fellow - arzow</title>
+  <!-- linking stylesheet-->
+  <link rel="stylesheet" href="../work_style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">arzow maksum</div>
+    <nav>
+      <a href="../index.html#home">home</a>
+      <a href="../index.html#work">work</a>
+      <a href="../index.html#skills">skills</a>
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#contact">contact</a>
+
+    </nav>
+  </header>
+
+  <main class="project-section">
+  <h1 class="project-title">STEM Fellowship - NATIONAL INTER-UNIVERSITY HEALTH DATA & AI INQUIRY PROGRAM</h1>
+  <h2 class="project-subtitle">AI + Data Science Fellow</h2>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="../images/sf1.png" alt="Slide 1" class="carousel-slide active">
+
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <div class="project-description">
+    <p>
+      STEM Fellowship's <a href="https://stemfellowship.org/big-data-and-ai-inquiry-and-experiential-learning/big-data-courses/inter-university-big-data-challenge/">IUBDC</a> 
+      aims to create an interdisciplinary, experiential learning environment where students from different universities and backgrounds collaborate on real-world data problems. It bridges 
+      academic learning and industry practice by engaging participants in agile, project-based work that builds essential data science skills—such as analytical reasoning, 
+      machine learning, and collaboration—while promoting scholarly communication and cross-institutional teamwork
+    </p>
+    <p>
+    For the Inter-University Big Data & AI Challenge, I led a team of five on a project to predict adverse drug reactions (ADRs) in elderly patients using real-world hospital data. As the 
+    Project Manager, I organized weekly meetings, assigned tasks, and kept everything on track using Trello and Gantt charts—we even finished the whole thing a week early.
+    On the technical side, I built and tested several machine learning models—Random Forest, XGBoost, and Linear Regression—and ended up with a model that hit 89% accuracy. We used the MIMIC-IV 
+    dataset, which has info on over 425,000 emergency department visits, and processed it all with pandas to extract the features we needed.
+
+    The project was eventually published in the STEM Fellowship Journal (which only accepts about 25% of submissions) and also featured on Underline. You can check out the code and read more about what 
+    we did here: 🔗 <a href="https://github.com/arzow-m/iubdc">GitHub Repository<a>
+    </p>
+  </div>
+</main>
+
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+</script>
+
+</body>
+</html>

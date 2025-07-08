@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>cepssc - arzow</title>
+    <!-- linking stylesheet-->
+  <link rel="stylesheet" href="../work_style.css" />
+</head>
+
+<body> 
+  <header>
+    <div class="logo">arzow maksum</div>
+    <nav>
+      <a href="../index.html#home">home</a>
+      <a href="../index.html#work">work</a>
+      <a href="../index.html#skills">skills</a>
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#contact">contact</a>
+
+    </nav>
+  </header>
+
+  <main class="project-section">
+  <h1 class="project-title">College of Engineering and Physical Sciences Student Council</h1>
+  <h2 class="project-subtitle">First-Year Representative</h2>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="../images/ceps1.jpg" alt="Slide 1" class="carousel-slide active">
+      <img src="../images/ceps2.jpg" alt="Slide 2" class="carousel-slide">
+      <img src="../images/ceps3.JPG" alt="Slide 3" class="carousel-slide">
+
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <div class="project-description">
+    <p> Getting elected as First-Year Rep in my first semester of university was such a meaningful 
+        experience—especially since I was up against 9 other candidates! I honestly didn’t expect to win, 
+        but I kept putting myself out there, meeting new people, and rallying support right up until the results 
+        came out :) 
+        <br>
+        <br> 
+        The <a href="https://www.cepssc.com">CEPSSC</a> (basically the student union for my college) 
+        gave me the chance to help plan a ton of events, from professional LinkedIn workshops to Valentine’s Day goodie giveaways. 
+        I helped coordinate communication between students and the council, which boosted engagement with our events and initiatives. 
+        We were able to reach and impact over 500 first-year students through our programming! </p> <p> I also got to attend weekly 
+            board meetings where we discussed budgets, allocated funding to ASOs (student clubs under CEPS), brainstormed event ideas, and 
+            tackled issues within our student governance system. It was a fun mix of learning how things work behind the scenes and actually 
+            helping to shape the first-year experience for a lot of my peers. </p>
+  </div>
+</main>
+
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+</script>
+
+</body>
+</html>

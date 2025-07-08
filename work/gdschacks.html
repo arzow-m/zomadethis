@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>gdsc hacks — arzow</title>
+   <!-- linking stylesheet-->
+  <link rel="stylesheet" href="../work_style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">arzow maksum</div>
+    <nav>
+      <a href="../index.html#home">home</a>
+      <a href="../index.html#work">work</a>
+      <a href="../index.html#skills">skills</a>
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#contact">contact</a>
+
+    </nav>
+  </header>
+
+  <main class="project-section">
+  <h1 class="project-title">GDSC Hacks</h1>
+  <h2 class="project-subtitle">Hackathon Organizer and Mentor</h2>
+
+  <!-- Carousel Wrapper -->
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="../images/gdscfriends.jpeg" alt="Slide 1" class="carousel-slide active">
+      <img src="../images/gdsccrowd.jpeg" alt="Slide 2" class="carousel-slide">
+      <img src="../images/gdscshop.JPG" alt="Slide 3" class="carousel-slide">
+      <img src="../images/gdscjudge.jpeg" alt="Slide 4" class="carousel-slide active">
+
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <div class="project-description">
+    <p>
+      <a href="https://www.gdschacks.com">GDSC Hacks</a> is a hackathon hosted by the Google Developer Student Club at Guelph, 
+      where students collaborate for 30 hours to develop unique software projects from scratch. 
+      We empower participants by offering a variety of resources, including workshops, mentoring, 
+      fun events, and sponsorship opportunities.
+    </p>
+    <p>
+    As part of the organizing team, I helped with sponsorship outreach and partnership coordination, 
+    ultimately securing over $8,000 in funding and forming a key collaboration with the one and only Major League Hacking (MLH)! Through that
+    collaboration we got huge sponsors like GitHub and Google. 
+    <br>
+    <br>
+    Once sponsorship was in place, I led the execution of a targeted marketing strategy (with zero paid efforts) that attracted 
+    over 850 applicants. I had to think outside the box and reflect on how I could disperse the news to anyone who may be interested. Some efforts included
+    reaching out to other GDSC chapters across Ontario, lecture hall visits where I pitched the event to hundreds of students, and of course social media posts.
+    Through consistent engagement and strategic promotion, we achieved an impressive 68% turnout rate, well above 
+    average for university hackathons.
+    <br>
+    <br>
+    Beyond the logistics, I was also hands-on during the 3 day event itself, mentoring participants and serving as a judge for final project 
+    submissions. I provided technical guidance on machine learning, front-end development, and overall project design/impact to over 200 students, 
+    many of whom were attending their first hackathon. The experience deepened my skills in community building, technical mentorship, and 
+    cross-functional coordination, all while balancing the fast-paced, high-stakes environment that defines student-run tech events.
+    <br>
+    <br>
+    Check out the article the College of Engineering and Physical Sciences made about it <a href="https://www.uoguelph.ca/ceps/news/2025/05/gdsc-hacks-2025-ai-hackathon">here!</a>
+    It includes a link to the Devpost and the photo drive.
+    </p>
+  </div>
+</main>
+
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+</script>
+
+</body>
+</html>
